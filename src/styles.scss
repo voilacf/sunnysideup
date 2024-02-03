@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import "vars";
+
+.xl{
+    @include fontSize("xl", "center");
+}
+
+
+ul li{
+    list-style: none;
+}
+body{
+    margin: 0;
+}
+.main-window-item{
+    background-color: #2323233b;
+    border-radius: 15px;
+    padding: 10px;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+}
+.cap{
+    text-transform: uppercase;
+    font-size: $xs;
+}

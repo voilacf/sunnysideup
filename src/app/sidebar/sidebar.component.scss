@@ -1,0 +1,15 @@
+section{
+    height: 100%;
+    width: 15vw;
+    // padding: 15px;
+    background-color: #23232383;
+    border: 1pt solid #000;
+    color: #ffffffd0;
+    text-shadow: 0 0 2px #232323;
+    overflow: scroll;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}

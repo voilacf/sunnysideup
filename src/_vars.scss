@@ -1,0 +1,11 @@
+$xl: 60px;
+$l: 28px;
+$m: 18px;
+$s: 16px;
+$xs: 14px;
+$xxs: 10px;
+
+@mixin fontSize($size, $align){
+    font-size: $size;
+    text-align: $align;
+}

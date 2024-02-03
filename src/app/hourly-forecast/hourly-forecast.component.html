@@ -1,0 +1,15 @@
+<div class="main-window-item" style="overflow: hidden">
+  <span class="cap">Hourly Forecast</span>
+  <div>
+    <ul class="row" style="overflow: scroll">
+      <app-hourly-forecast-item
+        *ngFor="
+          let item of [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3,
+            4
+          ]
+        "
+      ></app-hourly-forecast-item>
+    </ul>
+  </div>
+</div>
