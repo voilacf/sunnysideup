@@ -1,0 +1,14 @@
+section{
+    width: 100vw;
+    height: calc(90.5vh - 60px);
+    display: flex;
+    overflow: hidden;
+    &.dust{
+        background: rgb(222,246,251);
+        background: linear-gradient(0deg, rgba(222,246,251,1) 20%, rgba(175,175,186,1) 62%, rgba(118,114,129,1) 100%);
+    }
+    &.dawn{
+        background: rgb(222,246,251);
+        background: linear-gradient(0deg, rgb(224, 223, 166) 15%, rgb(231, 181, 116) 45%, rgb(230, 139, 127) 80%);
+    }
+}

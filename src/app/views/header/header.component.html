@@ -1,0 +1,40 @@
+<header>
+  <a href="" routerLink="/">
+    <h1>Sunny Side Up</h1>
+  </a>
+  <form id="weatherForm" action="" method="POST">
+    <!--TODO: Post or Put method-->
+    <ul>
+      <li>
+        <input
+          id="cityInput"
+          name="city"
+          type="text"
+          placeholder=" Add City Name and press Enter"
+          required
+        />
+      </li>
+      <li>
+        <input
+          id="submit-input"
+          type="submit"
+          value="Get Weather"
+          name="submit"
+          routerLink="/cityDetails"
+        />
+      </li>
+      <li><span class="s"></span></li>
+      <li>
+        <span><a routerLink="/settings">Settings</a></span>
+      </li>
+      <li>
+        <a
+          href="https://github.com/voilacf"
+          target="_blank"
+          title="check out my GitHub"
+          ><span>GitHub</span></a
+        >
+      </li>
+    </ul>
+  </form>
+</header>

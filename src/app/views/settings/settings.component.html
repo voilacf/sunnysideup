@@ -1,0 +1,53 @@
+<section>
+  <h2>Settings</h2>
+  <ul>
+    <li class="fm">
+      <div class="main-window-item">
+        <form action="POST">
+          <ul>
+            <li><p>Set the temperature metric here</p></li>
+            <li><label for="metric" *ngIf="">label</label></li>
+            <li>
+              <input type="button" id="metric" value="switch" />
+            </li>
+          </ul>
+        </form>
+      </div>
+    </li>
+    <li class="fm">
+      <form action="POST">
+        <div class="main-window-item">
+          <ul>
+            <li><p>Set the clock here</p></li>
+            <li>
+              <div class="row">
+                <label for="clock">label</label>
+                <input type="button" id="clock" value="switch" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </li>
+    <li class="fm">
+      <form action="">
+        <div class="main-window-item">
+          <ul>
+            <li><p>Set the theme here</p></li>
+            <li>
+              <div>
+                <label for="theme">label</label>
+                <input type="button" name="" id="theme" value="switch" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </li>
+  </ul>
+</section>
+
+<p>settings works!</p>
+Allow users to cahnge metrics for temperature and how to display time -> pm/am
+vs 24 app-hourly-forecast -> degrees celcius or fahrenheit -> darkmode /
+leightmode

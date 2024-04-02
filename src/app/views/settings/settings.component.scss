@@ -1,0 +1,30 @@
+section{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+section > ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 45px;
+    flex-wrap: wrap;
+}
+li.fm{
+    height: 35vh;
+    width: 30%;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+div.main-window-item ul{
+    padding: 10px;
+}
+li p{
+    width: 100%;
+    text-align: center;
+}

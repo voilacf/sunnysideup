@@ -2,9 +2,23 @@
 @import "vars";
 
 .xl{
-    @include fontSize("xl", "center");
+    @include fontSize($xl, "center");
 }
-
+.l{
+    @include fontSize($l, "center");
+}
+.m{
+    @include fontSize($m, "center");
+}
+.s{
+    @include fontSize($s, "center");
+}
+.xs{
+    @include fontSize($xs, "center");
+}
+.xss{
+    @include fontSize($xxs, "center");
+}
 
 ul li{
     list-style: none;

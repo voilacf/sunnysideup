@@ -1,5 +1,14 @@
 # Sunnysideup
 
+TODOS:
+- routing -> dafault window when no city has been added to the sidebar yet
+	-> main window as soon as there is at least on city added
+		-> last added city should be displayed or selected item from sidebar component 
+	-> error window -> when there is no internet connection or the route couldn't be found 
+- data binding:
+	-> data from sidebar item should be displayed in mainwindow 
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
 ## Development server

@@ -1,0 +1,30 @@
+button{
+    width: 100%;
+    display: flex;
+    border: none;
+    border-bottom: 1pt solid #ffffffd0;
+    padding-top: 15px;
+    background-color: transparent;
+    color: #ffffffd0;
+    & div{
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        padding: 0 0 15px 0;
+        text-align: start;
+    }
+    & div:nth-child(2){
+        width: 40%;
+        text-align: end;
+    }
+    &:hover{
+        background-color: #ffffff16;
+        box-shadow: 0 0 30px #ffffff31;
+    }
+    &:active{
+        background-color: #ffffff23;
+    }
+}
+ul{
+    padding: 0;
+}

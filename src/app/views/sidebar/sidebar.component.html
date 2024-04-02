@@ -1,0 +1,15 @@
+<section>
+  <ul>
+    <li *ngFor="let city of cities">
+      <app-sidebar-item
+        [cityName]="city.name"
+        [time]="city.time"
+        [weatherCondition]="city.weatherCondition"
+        [temperature]="city.temperature"
+        [max_temperature]="city.heighest"
+        [min_temperature]="city.lowest"
+        [full_data]="city.data"
+      ></app-sidebar-item>
+    </li>
+  </ul>
+</section>

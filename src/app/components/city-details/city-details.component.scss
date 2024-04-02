@@ -1,0 +1,34 @@
+section{
+    width: calc(85vw - 200px);
+    height: 100%;
+    padding: 10px 100px;
+}
+.frame  *{ 
+    width: 50%;
+}
+
+/*
+*
+* STYLES RESPONSIBLE FOR AN RESPONSIVE WEB DESIGN
+*
+*/
+/********** Large devices only **********/
+@media (min-width: 1200px){
+   
+}
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px){
+
+}
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px){
+  
+}
+/********** Extra small devices only **********/
+@media (min-width: 480px) and (max-width: 767px){
+    
+}
+/********** Super extra small devices only **********/
+@media (max-width: 479px){
+   
+}

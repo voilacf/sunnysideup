@@ -1,0 +1,26 @@
+<button (click)="onButtonClick()">
+  <div>
+    <ul>
+      <li>
+        <span>{{ cityName }}</span>
+      </li>
+      <li>
+        <span>{{ time }} o'clock </span>
+      </li>
+      <li>
+        <span>{{ weatherCondition }}</span>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <span>{{ temperature }}°</span>
+      </li>
+      <br />
+      <li>
+        <span>H {{ max_temperature }}° L {{ min_temperature }}° </span>
+      </li>
+    </ul>
+  </div>
+</button>
