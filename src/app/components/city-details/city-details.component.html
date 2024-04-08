@@ -1,15 +1,30 @@
 <section>
-  <div class="column" style="overflow: scroll; height: 100%">
-    <app-city-main></app-city-main>
-    <app-hourly-forecast></app-hourly-forecast>
-    <div style="display: flex; flex-wrap: wrap; margin-bottom: 15px">
-      <app-percipatation style="width: 50%"></app-percipatation>
-      <div class="row frame" style="flex-wrap: wrap; width: 50%">
-        <app-wind></app-wind>
-        <app-sun></app-sun>
-        <app-feels-like></app-feels-like>
-        <app-humidity></app-humidity>
-      </div>
-    </div>
-  </div>
+  <ul
+    class="column"
+    style="
+      overflow: scroll;
+      padding: 50px 0;
+      justify-content: start;
+      align-items: center;
+    "
+  >
+    <li>
+      <app-city-main></app-city-main>
+    </li>
+    <li>
+      <ul class="row">
+        <li><app-icon></app-icon></li>
+        <li><app-humidity></app-humidity></li>
+        <li><app-feels-like></app-feels-like></li>
+      </ul>
+    </li>
+    <li>
+      <ul class="row">
+        <li><app-wind></app-wind></li>
+        <li><app-sun></app-sun></li>
+        <li><app-visibility></app-visibility></li>
+        <!-- <li><app-pressure></app-pressure></li> -->
+      </ul>
+    </li>
+  </ul>
 </section>

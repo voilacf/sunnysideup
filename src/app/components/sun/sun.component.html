@@ -1,8 +1,23 @@
 <div class="main-window-item">
-  <span class="cap">Sunrise</span>
+  <span class="cap">Sun</span>
   <ul class="column">
-    <li><span>Time</span></li>
-    <li><span>Sunset</span></li>
-    <li><span>Time</span></li>
+    <li>
+      <ul class="row">
+        <li>
+          <span>Sunrise</span>
+        </li>
+        <li>
+          <span class="sun-value"> {{ sunrise }}</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <ul class="row">
+        <li><span>Sunset</span></li>
+        <li>
+          <span class="sun-value"> {{ sunset }}</span>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>

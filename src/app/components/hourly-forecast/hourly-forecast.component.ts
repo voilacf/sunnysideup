@@ -12,4 +12,6 @@ export class HourlyForecastComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  icons = ["☀︎", "⛅︎", "☁︎", "☾", "❄️", "🌧️", "⚡︎"]
+  
 }

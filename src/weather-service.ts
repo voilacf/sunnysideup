@@ -4,25 +4,19 @@ import axios from 'axios';
 export class WeatherService {
   private static apiUrl: string;
   private static apiKey = "b779f5bb62df31949db3585d41dfe472";
-  // private static city: string[];
   private static city: string;
 
   constructor() {
   }
 
-  public static init(city: string) {
-    // WeatherService.city.push(city);
-    WeatherService.city = city;
-    WeatherService.getWeatherByCity();
-  }
 
   static removeCity(city: string) {
     // const index = WeatherService.city.indexOf(city)
     // WeatherService.city.splice(index)
   }
 
-  static async getWeatherByCity(): Promise<any> {
-    WeatherService.apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${WeatherService.city}&APPID=${this.apiKey}&units=metric`;
+  static async getWeatherByCity(city: string): Promise<any> {
+    WeatherService.apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.apiKey}&units=metric`;
     try {
       const response = await axios.get(WeatherService.apiUrl, {
         params: {

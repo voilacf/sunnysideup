@@ -1,11 +1,12 @@
-<button (click)="onButtonClick()">
+<button (click)="onButtonClick()" routerLink="/cityDetails">
   <div>
     <ul>
       <li>
         <span>{{ cityName }}</span>
       </li>
       <li>
-        <span>{{ time }} o'clock </span>
+        <!-- <span>{{ time }} o'clock </span> -->
+        <span>{{ icon }}</span>
       </li>
       <li>
         <span>{{ weatherCondition }}</span>

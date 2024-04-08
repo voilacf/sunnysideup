@@ -1,14 +1,11 @@
 <div class="main-window-item column">
   <div><span class="cap">Wind</span></div>
-  <div class="row">
-    <ul>
-      <li>
-        <div class="row" style="justify-content: start">
-          <span>Num</span>
-          <div class="column"><span>KM/M</span><span>Wind</span></div>
-        </div>
-      </li>
-    </ul>
-    <img src="" alt="img" />
-  </div>
+  <ul class="row" style="justify-content: center; align-items: end">
+    <li>
+      <div class="row" style="justify-content: center; align-items: center">
+        <span class="value">{{ windSpeed.toFixed(2) }}</span>
+        <span>KM/M</span>
+      </div>
+    </li>
+  </ul>
 </div>

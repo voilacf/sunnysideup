@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/sidebarstuff/data-service';
 import { WeatherService } from 'src/weather-service';
 
 @Component({
@@ -7,19 +8,25 @@ import { WeatherService } from 'src/weather-service';
   styleUrls: ['./feels-like.component.scss']
 })
 export class FeelsLikeComponent implements OnInit {
-  value!: string;
+  static temperature: string;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    let data = WeatherService.getWeatherByCity().then(data => {
-      this.value = `${Math.trunc(data.main.feels_like)} °C`;
-    }).catch(error => {
-      throw new Error(error);
-    });;
 
   }
 
+  public setProperties(): void {
+    let data = this.dataService.getData();
+    if (!data) {
+      return;
+    }
+    FeelsLikeComponent.temperature = `${Math.trunc(data.main.feels_like)}°C`;
+  }
+
+  get value(): string {
+    return FeelsLikeComponent.temperature;
+  }
 
 
 }

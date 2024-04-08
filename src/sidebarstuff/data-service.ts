@@ -1,19 +1,19 @@
-// DataService.ts
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class DataService {
-    private data: BehaviorSubject<any> = new BehaviorSubject<any>('');
+    private data: any;
 
-    setData(cityName: any) {
-        console.log(`received data in data service ${JSON.stringify(cityName)}`)
-        this.data.next(cityName);
+    constructor() { }
+
+    public setData(cityName: any) {
+        // console.log(`received data in data service ${JSON.stringify(cityName)}`)
+        this.data = cityName;
     }
 
-    getData() {
-        return this.data.asObservable();
+    public getData() {
+        return this.data;
     }
 }

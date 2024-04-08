@@ -30,6 +30,7 @@ body{
     background-color: #2323233b;
     border-radius: 15px;
     padding: 10px;
+    height: 100px;
 }
 .column{
     display: flex;
@@ -41,4 +42,7 @@ body{
 .cap{
     text-transform: uppercase;
     font-size: $xs;
+}
+span.value{
+    font-size: 42px;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/sidebarstuff/data-service';
 import { WeatherService } from 'src/weather-service';
 
 @Component({
@@ -7,16 +8,24 @@ import { WeatherService } from 'src/weather-service';
   styleUrls: ['./humidity.component.scss']
 })
 export class HumidityComponent implements OnInit {
-  value!: string
+  static humidity: string
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    let data = WeatherService.getWeatherByCity().then(data => {
-      this.value = `${Math.trunc(data.main.humidity)} %`;
-    }).catch(error => {
-      throw new Error(error);
-    });;
+
+  }
+
+  public setProperties(): void {
+    let data = this.dataService.getData();
+    if (!data) {
+      return;
+    }
+    HumidityComponent.humidity = `${data.main.humidity}%`;
+  }
+
+  get value(): string {
+    return HumidityComponent.humidity;
   }
 
 }

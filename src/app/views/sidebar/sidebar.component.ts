@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from 'src/sidebarstuff/city';
-import { MapDataService } from 'src/sidebarstuff/city-map.service';
-import { WeatherService } from 'src/weather-service';
+import { DataService } from 'src/sidebarstuff/data-service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,10 +12,9 @@ export class SidebarComponent implements OnInit {
   static list: string[] = new Array<string>();;
 
   //TODO: change name according to file name
-  constructor(private mapDataService: MapDataService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    // SidebarComponent.cities = this.mapDataService.getMapData();
   }
 
   public static addCity(name: string, data: any) {
@@ -35,7 +33,7 @@ export class SidebarComponent implements OnInit {
       const item = {
         name: name.toUpperCase(),
         time: new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' }).slice(0, -3),
-        weatherCondition: "cloudy",
+        weatherCondition: data.weather[0].main.toLowerCase(),
         temperature: Math.trunc(data.main.temp),
         heighest: Math.trunc(data.main.temp_max),
         lowest: Math.trunc(data.main.temp_min),
@@ -49,20 +47,6 @@ export class SidebarComponent implements OnInit {
     } catch (error) {
       console.error('Error fetching weather data:', error);
     }
-
-
-
-    // const item = {
-    //   name: name,
-    //   time: new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' }).slice(0, -3),
-    //   weatherCondition: "cloudy",
-    //   temperature: Math.trunc(data.main.temp),
-    //   heighest: Math.trunc(data.main.temp_max),
-    //   lowest: Math.trunc(data.main.temp_min),
-    //   data: data
-    // }
-    // SidebarComponent.cities.set(name, item);
-    // this.list.push(name);
   }
 
   public static isEmpty(): boolean {

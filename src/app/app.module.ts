@@ -13,13 +13,16 @@ import { CityDetailsComponent } from './components/city-details/city-details.com
 import { HourlyForecastComponent } from './components/hourly-forecast/hourly-forecast.component';
 import { ForecastItemComponent } from './components/forecast-item/forecast-item.component';
 import { WindComponent } from './components/wind/wind.component';
-import { SunComponent } from './components/sun/sun.component';
 import { HumidityComponent } from './components/humidity/humidity.component';
 import { FeelsLikeComponent } from './components/feels-like/feels-like.component';
 import { HourlyForecastItemComponent } from './components/hourly-forecast-item/hourly-forecast-item.component';
 import { SettingsComponent } from './views/settings/settings.component';
+import { SunComponent } from './components/sun/sun.component';
 import { ErrorPageComponent } from './views/error-page/error-page.component';
 import { DafaultComponent } from './views/dafault/dafault.component';
+import { PressureComponent } from './components/pressure/pressure.component';
+import { VisibilityComponent } from './components/visibility/visibility.component';
+import { IconComponent } from './components/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +37,16 @@ import { DafaultComponent } from './views/dafault/dafault.component';
     HourlyForecastComponent,
     ForecastItemComponent,
     WindComponent,
-    SunComponent,
     HumidityComponent,
     FeelsLikeComponent,
     HourlyForecastItemComponent,
     SettingsComponent,
+    SunComponent,
     ErrorPageComponent,
-    DafaultComponent
+    DafaultComponent,
+    PressureComponent,
+    VisibilityComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,
