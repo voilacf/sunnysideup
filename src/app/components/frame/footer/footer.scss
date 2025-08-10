@@ -1,0 +1,30 @@
+.fotter-container {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+ .fotter-info {
+    display: absolute;
+    padding: 5px;
+    bottom: 0;
+    left: 0;
+  }
+  .socials {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.socials ul{
+  display: flex;
+  padding: 0 5px;
+  align-items: flex-end;
+
+  & li {
+    padding: 5px;
+    margin: 0;
+  }
+}
+

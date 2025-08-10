@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@use "assets/styles/colors";
+@use "assets/styles/fonts";
+@use "assets/styles/breakpoints";
+
+body {
+  margin: 0;
+  background: colors.$dust-background;
+  background: colors.$dust-gradient;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+.weather-detail{
+  background-color: #2323233b;
+  border-radius: 15px;
+  padding: 10px;
+  height: 100px;
+  width: 245px;
+
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+}
+
+.caption{
+  text-transform: uppercase;
+  font-size: fonts.$medium-small;
+}
+
+// classes
+.dawn{
+  background: colors.$dawn-background;
+  background: colors.$dawn-gradient}
+
+.dust{
+  background: colors.$dust-background;
+  background: colors.$dust-gradient;
+}
+

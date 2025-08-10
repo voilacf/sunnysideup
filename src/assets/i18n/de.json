@@ -1,0 +1,50 @@
+{
+  "settings": {
+    "heading": "Einstellungen",
+    "options": {
+      "metric": {
+        "heading": "Ändere die Anzeige-Einheit"
+      },
+      "visuals": {
+      }
+    }
+  },
+  "home": {
+    "search": {
+      "placeholder": "Suche eine Stadt"
+    }
+  },
+  "data": {
+    "titles": {
+      "temperature": "Temperatur",
+      "feelsLike": "Gefühlte Temperatur",
+      "humidity": "Luftfeuchtigkeit",
+      "pressure": "Druck",
+      "visibility": "Sichtweite",
+      "sun": "Sonne",
+      "sunset": "Sonnenuntergang",
+      "sunrise": "Sonnenaufgang",
+      "wind": "Wind"
+    },
+    "wind": {
+      "speed": "Geschwindigkeit",
+      "deg": "Richtung"
+    },
+    "weather": {
+      "sun": "Sonning",
+      "clouds": "Bewölkt",
+      "rain": "Regen",
+      "shnow": "Schnee",
+      "storm": "Sturm"
+    }
+  },
+  "errorToasts": {
+    "loadWeatherError": "Wetter Daten konnte nicht geladen werden 🤧",
+    "invalidUserInput": "Bitte nur Buchstaben eingeben 🤔",
+    "systemError": "Hast die App gecrasht 🙂"
+  },
+  "successToasts": {
+    "changeSettingsSuccess": "Die Einheit wurde erfolgreich geändert 🫡"
+  }
+}
+

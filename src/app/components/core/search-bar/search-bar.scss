@@ -1,0 +1,30 @@
+.search-bar-container {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 40px;
+
+  input {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e4e4e4;
+    padding: 3px;
+    font-size: 14px;
+  }
+
+  button {
+    height: 45px;
+    width: 75px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 3px #23232335;
+    background-color: #fff;
+
+    span {
+      font-size: 14px;
+    }
+  }
+}
+

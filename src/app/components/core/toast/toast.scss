@@ -1,0 +1,141 @@
+@use "../../../../assets/styles/colors";
+
+$max-toast-height: 500px;
+$min-toast-height: 60px;
+$toast-content-inner-padding: 16px;
+$toast-outer-margin: 10px;
+$max-content-height: $max-toast-height - 2*($toast-content-inner-padding);
+
+:host {
+  padding: 0;
+  animation: slideUp .4s ease-in;
+  animation-fill-mode: forwards;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 9999;
+  pointer-events: all;
+}
+
+div.toast-container {
+  margin: $toast-outer-margin;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: colors.$black;
+  color: colors.$soft-white;
+  min-height: $min-toast-height;
+  max-height: $max-toast-height;
+  min-width: 300px;
+  max-width: 500px;
+  transition: opacity .2s;
+  border-radius: 3px;
+  padding: $toast-content-inner-padding;
+  box-shadow: 0 0 7px 0 colors.$black;
+
+  &.success {
+    background-color: colors.$soft-white;
+  }
+
+  &.warn {
+    background-color: colors.$soft-white;
+  }
+  &.error {
+    background-color: colors.$soft-white;
+  }
+
+  div.toast-content {
+    max-height: $max-content-height;
+    overflow: hidden;
+    overflow-y: auto;
+
+    span {
+      user-select: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    span.toast-subtext {
+      font-size: 14px;
+    }
+
+    div.destroy-timer-progress-bar {
+      background-color: colors.$soft-white;
+      opacity: 0.4;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      animation: shrink;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+div.toast-actions {
+  display: flex;
+  margin-left: 32px;
+
+  div.action:not(:last-of-type) {
+    margin-right: 4px;
+  }
+}
+
+div.action{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  min-height: 28px;
+  width: 28px;
+  min-width: 28px;
+  font-size: 20px;
+  background-color: colors.$black;
+  transition: background-color 0.2s;
+  border-radius: 100%;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: colors.$black;
+  }
+
+  i {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    max-height: $max-toast-height + $toast-outer-margin;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 100%;
+  }
+
+  2% {
+    border-top-right-radius: 0;
+  }
+
+  100% {
+    border-top-right-radius: 0;
+    width: 0;
+  }
+}
+

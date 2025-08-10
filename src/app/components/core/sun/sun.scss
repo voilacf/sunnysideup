@@ -1,0 +1,22 @@
+.sun-container{
+  .content{
+    display: flex;
+    padding-top: 5px;
+
+   .sun-icon {
+      font-size: 44px;
+      display: flex;
+      align-content: center;
+      width: auto;
+      padding: 0 10px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 10px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+}
+

@@ -1,0 +1,19 @@
+@use "../../../../assets/styles/layout";
+
+.sidebar-container{
+  height: 100%;
+  width: layout.$sidebar-width;
+  background-color: #23232383;
+  border: 1pt solid #000;
+  color: #ffffffd0;
+  text-shadow: 0 0 2px #232323;
+  overflow: scroll;
+  height: calc(100vh - layout.$header-height);
+
+  ul{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+}
+

@@ -1,0 +1,18 @@
+<div class="'toast-container' + type">
+  <div class="toast-content">
+    @if (duration) {
+    <div class="destroy-timer-progress-bar">
+      <!-- [ngStyle]="{'animation-duration': duration + 'ms'}" -->
+      </div>
+    }
+    <!--span class="toast-message">{{message | translate}}</span>
+    <span class="toast-subtext">{{subtext | translate}}</span-->
+  </div>
+  <div class="toast-actions">
+    @for (action of actions; track action; let i = $index) {
+      <div class="action"(click)="performAction(i)">
+        <i [class]="iconMap[action.type]"></i>
+      </div>
+    }
+  </div>
+</div>

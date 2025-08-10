@@ -1,0 +1,20 @@
+<div class="weather-detail column">
+  <div>
+    <span class="caption">{{"data.titles.visibility" | translate}}</span>
+  </div>
+  <div class="row">
+    <ul>
+      <li>
+        <div class="row" style="justify-content: center; align-items: center">
+          <span class="value">{{kilometers.toFixed(2)}}</span>
+          @if (isMetric) {
+            <span>KM</span>
+          } @else {
+            <span>Miles</span>
+          }
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+

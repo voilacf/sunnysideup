@@ -1,0 +1,51 @@
+{
+  "settings": {
+    "heading": "Settings",
+    "options": {
+      "metric": {
+        "heading": "Change the display metric"
+      },
+      "visuals": {
+      }
+    }
+  },
+  "home": {
+    "search": {
+      "placeholder": "Search for a city"
+    }
+  },
+  "data": {
+    "titles": {
+      "temperature": "Temperature",
+      "feelsLike": "Feels like",
+      "humidity": "Humidity",
+      "pressure": "Pressure",
+      "visibility": "Visibility",
+      "sun": "Sun",
+      "sunset": "Sunset",
+      "sunrise": "Sunrise",
+      "wind": "Wind"
+    },
+    "wind": {
+      "speed": "Speed",
+      "deg": "Direction"
+    },
+    "weather": {
+      "sun": "Sunny",
+      "clouds": "Cloudy",
+      "rain": "Rain",
+      "shnow": "Shnow",
+      "storm": "Stormy"
+    }
+  },
+  "errorToasts": {
+    "loadWeatherError": "Fetching weather data failed 🤧",
+    "invalidUserInput": "Please, only enter letters 🤔",
+    "systemError": "You crashed the application 🙂"
+  },
+  "successToasts": {
+    "changeSettingsSuccess": "Settings successfully changed 🫡"
+  }
+
+}
+

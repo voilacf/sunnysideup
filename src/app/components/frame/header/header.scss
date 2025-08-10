@@ -1,0 +1,18 @@
+@use "../../../../assets/styles/colors";
+@use "../../../../assets/styles/layout";
+
+.header-container {
+  width: 100vw;
+  height: layout.$header-height;
+  background-color: colors.$header-background;
+  box-shadow: 0 5px 15px colors.$header-box-shadow;
+
+  & div{
+    padding: 10px;
+    height: calc(100% - 20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
