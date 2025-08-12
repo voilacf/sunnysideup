@@ -1,17 +1,17 @@
 <div>
-  <ul>
-    <li>
-      <span id="name" class="l">{{cityName}}</span>
-    </li>
-    <li>
-      <span class="xl">{{temperature}}</span>
-    </li>
-    <li>
-      <span class="m"> {{condition}}</span>
-    </li>
-    <li>
-      <span class="m">H:{{high_temp}}° L:{{low_temp}}°</span>
-    </li>
-  </ul>
+    <ul>
+      <li>
+        <span id="name" class="l">{{weatherData().name}}</span>
+      </li>
+      <li>
+       <span class="xl">{{weatherData().temperature.current}}</span>
+      </li>
+      <li>
+       <span class="m"> {{weatherData().weatherDescription}}</span>
+      </li>
+      <li>
+        <span class="m">H:{{weatherData().temperature.highest}}° L:{{weatherData().temperature.lowest}}°</span>
+      </li>
+    </ul>
 </div>
 

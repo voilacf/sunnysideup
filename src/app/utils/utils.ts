@@ -3,6 +3,7 @@ export class Utils {
    * returns true if provided string only contains utf-8 letters
    * */
   public static isInputValid(userInput: string): boolean {
+    // todo: allow white space for cities like New York / Hong Kong / HCMC
     return /^\p{L}+$/u.test(userInput);
   }
 

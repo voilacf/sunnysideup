@@ -2,12 +2,12 @@ import {Component} from '@angular/core';
 import {Utils} from "../../../utils/utils";
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-fotter',
   imports: [],
-  templateUrl: './footer.html',
-  styleUrl: './footer.scss',
+  templateUrl: './fotter.html',
+  styleUrl: './fotter.scss',
 })
-export class Footer {
+export class Fotter {
   date = Utils.extractDate(new Date(), true);
 }
 

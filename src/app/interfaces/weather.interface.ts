@@ -24,6 +24,7 @@ export interface WeatherData extends CityData {
   };
   readonly clouds: number;
   readonly humidity: number;
+  readonly visibility: number;
   readonly icon: string;
 }
 
@@ -36,8 +37,6 @@ export interface CityLocation {
     latitude: number;
   }
 }
-
-export type ApiData = WeatherData & CityLocation;
 
 export enum Unit {
   METRIC = "metric",

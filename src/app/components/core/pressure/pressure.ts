@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 import {TranslatePipe} from "@ngx-translate/core";
+import {WeatherData} from "../../../interfaces/weather.interface";
 
 @Component({
   selector: 'app-pressure',
@@ -8,5 +9,6 @@ import {TranslatePipe} from "@ngx-translate/core";
   styleUrl: './pressure.scss'
 })
 export class Pressure {
-  value = 0;
+  readonly weatherData = input.required<WeatherData>();
 }
+

@@ -1,4 +1,4 @@
-import {Component, Input, inject} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {loadWeatherAction} from "../../../actions/weather.action";
 
@@ -9,13 +9,10 @@ import {loadWeatherAction} from "../../../actions/weather.action";
   styleUrl: './search-bar.scss'
 })
 export class SearchBar {
-  @Input()
-  cityName = "";
-
   private readonly store = inject(Store);
 
-  fetchCityData() {
-    this.store.dispatch(loadWeatherAction({cityName: this.cityName}));
+  fetchCityData(cityName: string) {
+    this.store.dispatch(loadWeatherAction({cityName}));
   }
 }
 

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {ComponentModule} from "./modules/component-module/component-module-module";
 import {Header} from "./components/frame/header/header";
-import {Footer} from "./components/frame/footer/footer";
+import {Fotter} from "./components/frame/fotter/fotter";
 import {Home} from "./views/home/home";
 
 @Component({
@@ -10,7 +10,7 @@ import {Home} from "./views/home/home";
   imports: [RouterOutlet,
     ComponentModule,
     Header,
-    Footer,
+    Fotter,
     Home
   ],
   templateUrl: './app.html',
@@ -19,3 +19,4 @@ import {Home} from "./views/home/home";
 export class App {
   protected title = 'sunnysideup';
 }
+

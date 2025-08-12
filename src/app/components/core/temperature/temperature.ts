@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, input} from '@angular/core';
+import {WeatherData} from "../../../interfaces/weather.interface";
 
 @Component({
   selector: 'app-temperature',
@@ -6,11 +7,7 @@ import {Component} from '@angular/core';
   templateUrl: './temperature.html',
   styleUrl: './temperature.scss'
 })
-export class Temperature {
-  cityName = "Bamberg";
-  temperature = 0;
-  condition = "Sunny";
-  high_temp = 0;
-  low_temp = 0;
+export class Temperature{
+  readonly weatherData = input.required<WeatherData>();
 }
 

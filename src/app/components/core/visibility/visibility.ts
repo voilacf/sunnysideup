@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, input, inject} from '@angular/core';
 import {TranslatePipe} from "@ngx-translate/core";
+import {WeatherData, Unit} from "../../../interfaces/weather.interface";
+import {SettingsStore} from "../../../reducer/settings.store";
 
 @Component({
   selector: 'app-visibility',
@@ -8,7 +10,9 @@ import {TranslatePipe} from "@ngx-translate/core";
   styleUrl: './visibility.scss'
 })
 export class Visibility {
-  kilometers = 0;
-  isMetric: boolean = true;
+  readonly weatherData = input.required<WeatherData>();
+  readonly settingsStore = inject(SettingsStore);
+
+  isMetric: boolean = (this.settingsStore.unit() === Unit.METRIC);
 }
 

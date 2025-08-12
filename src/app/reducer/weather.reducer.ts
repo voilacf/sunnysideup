@@ -1,26 +1,24 @@
 import {createReducer, on, createSelector, createFeatureSelector} from "@ngrx/store";
 import {loadWeatherSuccessAction} from "../actions/weather.action";
-import {WeatherData, Unit} from "../interfaces/weather.interface";
+import {WeatherData} from "../interfaces/weather.interface";
 
 export interface AppState {
   readonly searchParam: string;
-  readonly selectedCity: WeatherData;
+  readonly weatherData: WeatherData;
   readonly cities: WeatherData[];
-  readonly unitSetting: Unit;
 }
 
 export const initialState: AppState = {
   searchParam: "",
-  selectedCity: {} as WeatherData,
+  weatherData: {} as WeatherData,
   cities: [],
-  unitSetting: Unit.METRIC
 }
 
 export const weatherReducer = createReducer(
   initialState,
   on(loadWeatherSuccessAction, (state, {cityData}): AppState => ({
     ...state,
-    selectedCity: cityData
+    weatherData: cityData
   }))
 );
 
@@ -31,18 +29,13 @@ export const selectSearchParam = createSelector(
   (state) => state.searchParam
 );
 
-export const selectSelectedCity = createSelector(
+export const selectWeatherData = createSelector(
   selectAppState,
-  (state) => state.selectedCity
+  (state) => state.weatherData
 );
 
 export const selectCities = createSelector(
   selectAppState,
   (state) => state.cities
-);
-
-export const selectUnitSetting = createSelector(
-  selectAppState,
-  (state) => state.unitSetting
 );
 

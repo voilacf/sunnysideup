@@ -2,6 +2,7 @@ import {Injectable, inject} from "@angular/core";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {Store} from "@ngrx/store";
 import {exhaustMap, catchError, map, take} from "rxjs/operators";
+import {of} from "rxjs";
 import {loadWeatherAction,
   loadWeatherSuccessAction,
   changeSystemSettingsAction,
@@ -10,12 +11,12 @@ import {loadWeatherAction,
 import {toastSuccessAction,
   toastErrorAction
 } from "../actions/toast.action";
-import {selectUnitSetting} from "../reducer/weather.reducer";
 import {WeatherService} from "../services/weather.service";
 import {Unit} from "../interfaces/weather.interface";
 import {ToastSuccessMessage} from "../interfaces/toast-success-message.enum"
 import {ToastErrorMessage} from "../interfaces/toast-error-message.enum";
 import {Utils} from "../utils/utils";
+import {WeatherUtils} from "../utils/weather.utils";
 
 @Injectable()
 export class WeatherEffects {
@@ -23,49 +24,32 @@ export class WeatherEffects {
   private readonly store = inject(Store);
   private readonly weatherService = inject(WeatherService);
 
-  currentMetric$ = selectUnitSetting;
-
-  /*loadWeather$ = createEffect(() => {
+  loadWeather$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(loadWeatherAction),
       exhaustMap(action => {
         if (!Utils.isInputValid(action.cityName)) {
-          this.store.dispatch(toastErrorAction({message: ToastErrorMessage.INVALID_USER_INPUT}));
-          throw new Error("Error: invlaid user input");
+          return of(
+            toastErrorAction({ message: ToastErrorMessage.INVALID_USER_INPUT })
+          );
         }
-        this.weatherService.fetchWeatherOfCity(action.cityName).pipe(
-          map(cityData => {
-            if (!cityData) {
-              throw new Error("Error occured: weather data of city is empty");
+        return this.weatherService.fetchWeatherOfCity(action.cityName).pipe(
+          map(apiData => {
+            if (!apiData) {
+              throw new Error("Weather data is empty");
             }
-
-            return loadWeatherSuccessAction({cityData});
+            return loadWeatherSuccessAction({
+              cityData: WeatherUtils.transformToWeatherData(apiData)
+            });
           }),
           catchError(() => {
-            this.store.dispatch(toastErrorAction({message: ToastErrorMessage.LOAD_WEATHER_ERROR}));
-            throw new Error("Fetching weather for city failed");
+            return of(
+              toastErrorAction({ message: ToastErrorMessage.LOAD_WEATHER_ERROR })
+            );
           })
-        )
+        );
       })
     );
-  });*/
-
-  // todo: fix issues here
-  /* changeSystemSettings$ = createEffect(() => {
-    return this.actions$.pipe(
-      ofType(changeSystemSettingsAction), () => {
-        this.currentMetric$.pipe(take(1)).subscribe(metric => {
-          this.store.dispatch(toastSuccessAction({message: ToastSuccessMessage.CHANGE_SETTINGS_SUCCESS}));
-          if (metric === Unit.METRIC) {
-            return changeSystemSettingsSuccessAction({metric: Unit.IMPERIAL});
-          }
-          return changeSystemSettingsSuccessAction({metric: Unit.METRIC});
-        });
-      }),
-      catchError(() => {
-        // todo: delete -> this should literally never occur, how should it?
-        throw new Error("Could not change system settings");
-      })
-  });*/
+  });
 }
 

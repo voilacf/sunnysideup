@@ -5,8 +5,8 @@
   <div class="row">
     <ul>
       <li>
-        <div class="row" style="justify-content: center; align-items: center">
-          <span class="value">{{kilometers.toFixed(2)}}</span>
+        <div class="row">
+          <span class="value">{{weatherData().visibility}}</span>
           @if (isMetric) {
             <span>KM</span>
           } @else {

@@ -1,8 +1,6 @@
 @use "../../../assets/styles/layout";
 
-#frame {
-  height: calc(100vh - layout.$header-height);
-
+.frame {
   .weather-data {
     width: (100vw - layout.$sidebar-width);
 

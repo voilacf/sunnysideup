@@ -1,13 +1,12 @@
 <div class="search-bar-container">
   <input #cityName
-         (keyup.enter)="fetchCityData()"
-         name="city"
+         (keyup.enter)="fetchCityData(cityName.value)"
          placeholder="Add city name and press enter"
          required
          type="text"
   />
   <button
-    (click)="fetchCityData()"
+    (click)="fetchCityData(cityName.value)"
   ><span>Submit</span></button>
 </div>
 

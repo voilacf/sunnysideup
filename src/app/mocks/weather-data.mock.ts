@@ -52,6 +52,7 @@ export const fullWeatherDataMock: WeatherData[] = [
     },
     clouds: 0,
     humidity: 56,
+    visibility: 0,
     icon: ""
   },
   {
@@ -69,6 +70,7 @@ export const fullWeatherDataMock: WeatherData[] = [
     },
     clouds: 0,
     humidity: 89,
+    visibility: 0,
     icon: ""
   }
 ]

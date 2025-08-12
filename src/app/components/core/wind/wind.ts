@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, input} from '@angular/core';
 import {TranslatePipe} from "@ngx-translate/core";
+import {WeatherData} from "../../../interfaces/weather.interface";
 
 @Component({
   selector: 'app-wind',
@@ -8,7 +9,6 @@ import {TranslatePipe} from "@ngx-translate/core";
   styleUrl: './wind.scss'
 })
 export class Wind {
-  speed = 0;
-  deg = 0;
+  readonly weatherData = input.required<WeatherData>();
 }
 

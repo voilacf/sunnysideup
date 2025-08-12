@@ -1,19 +1,19 @@
-<div id="frame" class="row">
-  <app-sidebar />
+<div class="row frame">
+  <!-- app-sidebar /-->
   <div class="weather-data">
     <div style="display: flex; justify-content: center">
-      <app-temperature />
+      <app-temperature [weatherData]="(weatherData$ | async)!"/>
     </div>
     <div style="display:flex; justify-content: space-between">
       <!--app-weather-icon></app-weather-icon-->
-      <app-feels-like />
-      <app-humidity />
-      <app-wind />
+      <app-feels-like [weatherData]="(weatherData$ | async)!"/>
+      <app-humidity [weatherData]="(weatherData$ | async)!"/>
+      <app-wind [weatherData]="(weatherData$ | async)!"/>
     </div>
     <div style="display:flex; justify-content: space-between">
-      <app-pressure />
-      <app-sun />
-      <app-visibility />
+      <app-pressure [weatherData]="(weatherData$ | async)!"/>
+      <app-sun [weatherData]="(weatherData$ | async)!"/>
+      <app-visibility [weatherData]="(weatherData$ | async)!"/>
     </div>
   </div>
 </div>

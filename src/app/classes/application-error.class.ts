@@ -1,13 +1,13 @@
-import {ApplicationErrorMessages} from "../interfaces/application-error-messages.enum";
+import {ToastErrorMessage} from "../interfaces/toast-error-message.enum";
 
 export class ApplicationError extends Error {
-  readonly message: ApplicationErrorMessage;
+  override readonly message: ToastErrorMessage;
   readonly additionalInformation: string;
   readonly toastCode: string;
 
-  constructor(messageCode: string, details?: string) {
+  constructor(messageCode: ToastErrorMessage, details?: string) {
     super();
-    this.message = messageCode || ApplicationErrorMessage.SYSTEM_ERROR;
+    this.message = messageCode || ToastErrorMessage.SYSTEM_ERROR;
     this.additionalInformation = details || "";
     this.toastCode = `errorToasts.${messageCode}`;
   }

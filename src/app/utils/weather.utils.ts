@@ -28,6 +28,7 @@ export class WeatherUtils {
      },
       clouds: data.clouds.all,
       humidity: data.main.humidity,
+      visibility: data.visibility,
       icon: data.weather.icon
     };
   }

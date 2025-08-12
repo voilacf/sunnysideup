@@ -2,6 +2,7 @@
 @use "assets/styles/colors";
 @use "assets/styles/fonts";
 @use "assets/styles/breakpoints";
+@use "assets/styles/layout";
 
 body {
   margin: 0;
@@ -13,13 +14,18 @@ ul {
   list-style: none;
   margin: 0;
 }
+
+// classes
+.frame {
+  height: calc(100vh - layout.$header-height);
+}
+
 .weather-detail{
   background-color: #2323233b;
   border-radius: 15px;
   padding: 10px;
   height: 100px;
   width: 245px;
-
 }
 
 .column{
@@ -36,7 +42,10 @@ ul {
   font-size: fonts.$medium-small;
 }
 
-// classes
+.value {
+  font-size: 28px;
+}
+
 .dawn{
   background: colors.$dawn-background;
   background: colors.$dawn-gradient}
