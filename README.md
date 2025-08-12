@@ -1,56 +1,86 @@
-# Sunnysideup
+# Sunnysideup - Browser based Weather App - WIP
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
 
-## Development server
+---
 
-To start a local development server, run:
+## 1. Start the application locally
 
-```bash
-ng serve
-```
+You will need 
+  - either [Node.js](https://nodejs.org/en/download) or [pnpm standalone](https://pnpm.io/installation),
+  - a [current open-weather API-Key](https://openweathermap.org/api)
+  - and a Web Browser
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+### 1.1.1 Install dependecies using pnpm standalone
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+You have *pnpm* installed on your computer, at *root* level of the project, first run:
 
 ```bash
-ng generate --help
+pnpm i
 ```
 
-## Building
+This will install all dependencies listed in the *package.json*.
+Note that the projects *pnpm-lock.yaml* was generated with *pnpm v10*.
 
-To build the project run:
+---
+
+If you run an older or newer version either discard the *pnpm-lock.yaml* and run:
 
 ```bash
-ng build
+pnpm i
 ```
+AND remove the *pnpm: 10* from the *engine* array of the *package.json*
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+OR run:
 
 ```bash
-ng test
+npx pnpm@10 i
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+### 1.1.2 Install dependencies using npm via NodeJS
+
+Discard the *pnpm-lock.yaml*, remove *pnpm* from the *engine* array, delete the *pre-install* script of the *package.jon* and run:
 
 ```bash
-ng e2e
+npm i
 ```
+
+---
+
+### 1.2 Sign up for an open-weather API-Key
+
+Place your API-Key inside the src/environments/environment.prod.ts
+
+---
+
+### 1.3 Start Server
+
+After the *node_modules* were installed and you placed your API-Key inside the environment,
+
+start the server by running:
+
+```bash
+pnpm dev
+```
+
+OR if you use npm and NodeJS, by running:
+
+```bash
+npm run dev
+```
+
+(see all availabe scripts in *package.json*)
+
+---
+
+### 2. Visit the application in the browser
+
+Once the server is running, open your browser and navigate to `http://localhost:port-displayed-in-terminal`. 
+The application will automatically reload whenever you modify any of the source files.
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
