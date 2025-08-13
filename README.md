@@ -53,7 +53,7 @@ npm i
 
 ### 1.2 Sign up for an open-weather API-Key
 
-Place your API-Key inside the src/environments/environment.prod.ts
+Place your API-Key inside the src/environments/environment.ts
 
 ---
 

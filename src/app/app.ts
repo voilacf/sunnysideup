@@ -4,6 +4,7 @@ import {ComponentModule} from "./modules/component-module/component-module-modul
 import {Header} from "./components/frame/header/header";
 import {Fotter} from "./components/frame/fotter/fotter";
 import {Home} from "./views/home/home";
+import {Settings} from "./views/settings/settings";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import {Home} from "./views/home/home";
     ComponentModule,
     Header,
     Fotter,
-    Home
+    Home,
+    Settings
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

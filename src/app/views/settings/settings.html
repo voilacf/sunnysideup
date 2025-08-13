@@ -1,1 +1,25 @@
-<p class="frame">settings works!</p>
+<div class="frame settings-container">
+  <p class="value">{{"settings.heading" | translate}}</p>
+  <ul>
+    <li class="weather-detail column">
+      <p class="caption">Language</p>
+      <span>Your language is set to {{store.lang()}}</span>
+      <div>
+        <span>DE</span>
+        <span onClick="switchLang()">Click to change</span>
+      </div>
+    </li>
+    <li class="weather-detail column">
+      <p class="caption">Metric and Units</p>
+      <span>Your unit is set to {{store.unit()}}</span>
+    </li>
+    <li class="weather-detail column">
+      <p class="caption">Theme</p>
+      <span>Your theme is set to {{store.theme()}}</span>
+    </li>
+    <li class="weather-detail column">
+      <p class="caption">Clock</p>
+    </li>
+  </ul>
+</div>
+
