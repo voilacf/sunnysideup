@@ -1,10 +1,11 @@
 import {Component, inject} from '@angular/core';
 import {Store} from "@ngrx/store";
+import {TranslatePipe} from "@ngx-translate/core";
 import {loadWeatherAction} from "../../../actions/weather.action";
 
 @Component({
   selector: 'app-search-bar',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './search-bar.html',
   styleUrl: './search-bar.scss'
 })

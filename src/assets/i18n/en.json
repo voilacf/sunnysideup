@@ -1,18 +1,31 @@
 {
+  "home": {
+    "search": {
+      "placeholder": "Add city name and press enter",
+      "submit": "Search"
+    }
+  },
   "settings": {
     "heading": "Settings",
     "options": {
+      "language": {
+        "heading": "Language",
+        "info": "Your language is set to ",
+        "icon": "DE"
+      },
       "metric": {
-        "heading": "Change the display metric"
+        "heading": "Metric and Units",
+        "info": "Your unit is set to "
       },
       "visuals": {
+        "heading": "Theme",
+        "info": "Your theme is set to "
+      },
+      "clock": {
+        "heading": "Clock"
       }
-    }
-  },
-  "home": {
-    "search": {
-      "placeholder": "Search for a city"
-    }
+    },
+    "click": "Click to switch"
   },
   "data": {
     "titles": {

@@ -1,18 +1,31 @@
 {
+  "home": {
+    "search": {
+      "placeholder": "Gib eine Stadt ein und drücke Enter",
+      "submit": "Suchen"
+    }
+  },
   "settings": {
     "heading": "Einstellungen",
     "options": {
+      "language": {
+        "heading": "Sprache",
+        "info": "Deine Sprache ist ",
+        "icon": "EN"
+      },
       "metric": {
-        "heading": "Ändere die Anzeige-Einheit"
+        "heading": "Einheiten",
+        "info": "Deine Einheit ist "
       },
       "visuals": {
+        "heading": "Farb-Palette",
+        "info": "Dein Theme ist "
+      },
+      "clock": {
+        "heading": "Uhrzeit"
       }
-    }
-  },
-  "home": {
-    "search": {
-      "placeholder": "Suche eine Stadt"
-    }
+    },
+    "click": "Klicke um zu wechseln"
   },
   "data": {
     "titles": {

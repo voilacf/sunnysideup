@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {TranslatePipe} from "@ngx-translate/core";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 import {SettingsStore, Language} from "../../reducer/settings.store";
 
 @Component({
@@ -10,13 +10,16 @@ import {SettingsStore, Language} from "../../reducer/settings.store";
 })
 export class Settings {
   readonly store = inject(SettingsStore);
+  readonly translateService = inject(TranslateService);
 
   public switchLang(): void {
     if (this.store.lang() === Language.ENGLISH) {
       this.store.changeToGerman();
+      this.translateService.use(this.store.lang());
       return;
     }
       this.store.changeToEnglish();
+      this.translateService.use(this.store.lang());
   }
 }
 

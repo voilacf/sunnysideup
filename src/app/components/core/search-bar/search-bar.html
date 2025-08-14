@@ -1,12 +1,12 @@
 <div class="search-bar-container">
   <input #cityName
          (keyup.enter)="fetchCityData(cityName.value)"
-         placeholder="Add city name and press enter"
+    placeholder='{{"home.search.placeholder" | translate}}'
          required
          type="text"
   />
   <button
     (click)="fetchCityData(cityName.value)"
-  ><span>Submit</span></button>
+  ><span>{{"home.search.submit" | translate}}</span></button>
 </div>
 

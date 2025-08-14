@@ -1,5 +1,5 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection, importProvidersFrom } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import {ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection, importProvidersFrom} from '@angular/core';
+import {provideRouter} from '@angular/router';
 import {provideStore} from "@ngrx/store";
 import {provideEffects} from "@ngrx/effects";
 import {provideStoreDevtools} from "@ngrx/store-devtools";
@@ -10,7 +10,7 @@ import {weatherReducer} from "./reducer/weather.reducer";
 import {WeatherEffects} from "./effects/weather.effects";
 import {environment} from "../environments/environment";
 
-import { routes } from './app.routes';
+import {routes} from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -29,7 +29,7 @@ export const appConfig: ApplicationConfig = {
         prefix: "/assets/i18n/",
         suffix: ".json"
       }),
-      fallbackLang: "en",
+      fallbackLang: "de",
       lang: "en"
     })
   ]
