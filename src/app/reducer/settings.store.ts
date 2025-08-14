@@ -3,8 +3,8 @@ import {signalStore, withState, withMethods, withComputed, patchState} from "@ng
 import {Unit} from "../interfaces/weather.interface";
 
 export enum Language {
-  ENGLISH = "English",
-  GERMAN = "Deutsch"
+  ENGLISH = "en",
+  GERMAN = "de"
 }
 
 export enum Theme {

@@ -51,6 +51,10 @@
       "storm": "Stormy"
     }
   },
+  "error": {
+    "heading": "System Error",
+    "info": "Please check your Internet-Connection"
+  },
   "errorToasts": {
     "loadWeatherError": "Fetching weather data failed 🤧",
     "invalidUserInput": "Please, only enter letters 🤔",

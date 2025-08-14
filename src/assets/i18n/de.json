@@ -51,6 +51,10 @@
       "storm": "Sturm"
     }
   },
+  "error": {
+    "heading": "System Fehler",
+    "info": "Bitte überprüfe deine Internet Verbindung"
+  },
   "errorToasts": {
     "loadWeatherError": "Wetter Daten konnte nicht geladen werden 🤧",
     "invalidUserInput": "Bitte nur Buchstaben eingeben 🤔",

@@ -15,11 +15,10 @@ export class Settings {
   public switchLang(): void {
     if (this.store.lang() === Language.ENGLISH) {
       this.store.changeToGerman();
-      this.translateService.use(this.store.lang());
-      return;
-    }
+    } else {
       this.store.changeToEnglish();
-      this.translateService.use(this.store.lang());
+    }
+    this.translateService.use(this.store.lang());
   }
 }
 

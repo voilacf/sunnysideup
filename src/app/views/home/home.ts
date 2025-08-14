@@ -1,5 +1,7 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit, OnDestroy} from '@angular/core';
 import {AsyncPipe} from "@angular/common";
+import {Router} from "@angular/router";
+import {fromEvent, Subscription} from "rxjs";
 import {Store} from "@ngrx/store";
 import {selectWeatherData} from "../../reducer/weather.reducer";
 
@@ -26,9 +28,32 @@ import {Wind} from "../../components/core/wind/wind";
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
+export class Home implements OnInit, OnDestroy {
   private readonly store = inject(Store);
+  private readonly router = inject(Router);
+
+  private onlineSubscription!: Subscription;
+  private offlineSubscription!: Subscription;
 
   readonly weatherData$ = this.store.select(selectWeatherData);
+
+  ngOnInit() {
+    if (!navigator.onLine) {
+      this.router.navigate(["/error"]);
+    }
+
+    this.onlineSubscription = fromEvent(window, "online").subscribe(() => {
+      this.router.navigate(["/"]);
+    });
+
+    this.offlineSubscription = fromEvent(window, "offline").subscribe(() => {
+      this.router.navigate(["/error"]);
+    });
+  }
+
+  ngOnDestroy() {
+    this.onlineSubscription.unsubscribe();
+    this.offlineSubscription.unsubscribe();
+  }
 }
 

@@ -1,0 +1,22 @@
+.error-container{
+  justify-content: center;
+  align-items: flex-start;
+
+  ul {
+    align-items: center;
+    padding: 225px 0 0 0;
+
+    .icon {
+      font-size: 84px;
+      color: #fff;
+    }
+
+    .heading {
+      font-size: 28px;
+    }
+
+    .sub-heading {
+      font-size: 20px;
+    }
+  }
+}
