@@ -1,6 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
-import {SettingsStore, Language} from "../../reducer/settings.store";
+import {SettingsStore} from "../../reducer/settings.store";
+import {Language, Unit} from "../../interfaces/settings.interface";
 
 @Component({
   selector: 'app-settings',
@@ -19,6 +20,14 @@ export class Settings {
       this.store.changeToEnglish();
     }
     this.translateService.use(this.store.lang());
+  }
+
+  public switchUnit(): void {
+    if (this.store.unit() === Unit.METRIC) {
+      this.store.changeToImperial();
+      return;
+    }
+    this.store.changeToMetric();
   }
 }
 

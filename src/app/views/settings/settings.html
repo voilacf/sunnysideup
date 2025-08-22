@@ -1,17 +1,31 @@
 <div class="frame settings-container">
   <p class="value">{{"settings.heading" | translate}}</p>
   <ul>
-    <li class="weather-detail column">
+    <li class="weather-detail column"
+      (click)="switchLang()">
       <p class="caption">{{"settings.options.language.heading" | translate}}</p>
-      <span>{{"settings.options.language.info" | translate}}{{store.lang()}}</span>
-      <div>
+      <div class="row">
         <button (click)="switchLang()">{{"settings.options.language.icon" | translate}}</button>
-        <span>{{"settings.click" | translate}}</span>
+        <div class="info column">
+          <span>{{"settings.options.language.info" | translate}}{{store.lang()}}</span>
+          <span>{{"settings.click" | translate}}</span>
+        </div>
       </div>
     </li>
-    <li class="weather-detail column">
+    <li class="weather-detail column"
+      (click)="switchUnit()">
       <p class="caption">{{"settings.options.metric.heading" | translate}}</p>
-      <span>{{"settings.options.metric.info" | translate}}{{store.unit()}}</span>
+      <div class="row">
+        @if (store.unit() === "metric") {
+          <button (click)="switchUnit()">KmH/°C</button>
+        } @else {
+          <button (click)="switchUnit()">Miles/°F</button>
+        }
+        <div class="info">
+          {{"settings.options.metric.info" | translate}}{{store.unit()}}
+          <span>{{"settings.click" | translate}}</span>
+        </div>
+      </div>
     </li>
     <li class="weather-detail column">
       <p class="caption">{{"settings.options.visuals.heading" | translate}}</p>

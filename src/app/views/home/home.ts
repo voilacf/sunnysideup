@@ -2,6 +2,7 @@ import {Component, inject, OnInit, OnDestroy} from '@angular/core';
 import {AsyncPipe} from "@angular/common";
 import {Router} from "@angular/router";
 import {fromEvent, Subscription} from "rxjs";
+import {take} from "rxjs/operators";
 import {Store} from "@ngrx/store";
 import {selectWeatherData} from "../../reducer/weather.reducer";
 
@@ -41,6 +42,12 @@ export class Home implements OnInit, OnDestroy {
     if (!navigator.onLine) {
       this.router.navigate(["/error"]);
     }
+
+    this.weatherData$.pipe(take(1)).subscribe(data => {
+      if (!data.name) {
+        this.router.navigate(["/settings"]);
+      }
+    });
 
     this.onlineSubscription = fromEvent(window, "online").subscribe(() => {
       this.router.navigate(["/"]);

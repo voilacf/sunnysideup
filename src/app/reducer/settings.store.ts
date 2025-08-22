@@ -1,16 +1,6 @@
 import {computed} from "@angular/core";
 import {signalStore, withState, withMethods, withComputed, patchState} from "@ngrx/signals";
-import {Unit} from "../interfaces/weather.interface";
-
-export enum Language {
-  ENGLISH = "en",
-  GERMAN = "de"
-}
-
-export enum Theme {
-  LIGHT = "light",
-  DARK = "dark"
-}
+import {Unit, Language, Theme} from "../interfaces/settings.interface";
 
 export interface SettingsState {
   unit: Unit,
@@ -34,11 +24,6 @@ export const SettingsStore = signalStore(
     changeToGerman: () => patchState(store, {lang: Language.GERMAN}),
     changeToLightTheme: () => patchState(store, {theme: Theme.LIGHT}),
     changeToDarkTheme: () => patchState(store, {theme: Theme.DARK})
-  })),
-  withComputed((store) => ({
-    unit: computed(() => store.unit()),
-    lang: computed(() => store.lang()),
-    theme: computed(() => store.theme())
   }))
 );
 

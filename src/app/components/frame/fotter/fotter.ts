@@ -8,6 +8,5 @@ import {Utils} from "../../../utils/utils";
   styleUrl: './fotter.scss',
 })
 export class Fotter {
-  date = Utils.extractDate(new Date(), true);
 }
 
